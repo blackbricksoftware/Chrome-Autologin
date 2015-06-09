@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "chrome autologin",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Automatically click I agree to public wifi",
+    "description": "The description of the application"
+  }
+}
