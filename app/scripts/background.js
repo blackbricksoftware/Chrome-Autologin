@@ -1,7 +1,21 @@
 'use strict';
 
-chrome.runtime.onInstalled.addListener(function (details) {
-  console.log('previousVersion', details.previousVersion);
-});
+var dom = '[href="http://blackbricksoftware.com/"]';
 
-console.log('\'Allo \'Allo! Event Page');
+$(function(){
+	if ($(dom).length>0) {
+		console.log('clicking '+dom);
+		if ($(dom).is('a')) {
+			$(dom)[0].click();
+		} else {
+			$(dom).click();
+		}
+	} else {
+		console.log('not found '+dom);
+	}
+	var refreshtime = ((Math.random()-0.5)*10+60)*1000;
+	console.log(refreshtime);
+	setTimeout(function(){
+		location.reload(true);
+	},refreshtime);
+});

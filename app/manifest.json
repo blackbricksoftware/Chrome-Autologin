@@ -8,15 +8,21 @@
     "128": "images/icon-128.png"
   },
   "default_locale": "en",
-  "background": {
-    "scripts": [
-      "scripts/chromereload.js",
-      "scripts/background.js"
-    ]
-  },
-  "permissions": [
-    "tabs",
-    "http://*/*",
-    "https://*/*"
-  ]
+	"content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "run_at": "document_end",
+      "all_frames": true,
+      "js": [
+		"bower_components/jquery/dist/jquery.min.js",
+		"scripts/background.js"
+	  ]
+    }
+  ],
+  "web_accessible_resources": [
+			"bower_components/jquery/dist/jquery.min.map"
+			]
 }
